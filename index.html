@@ -1,44 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Mi Scraper Web</title>
-    <!-- Agrega los enlaces a los archivos CSS y JS de Flask-Bootstrap si los estás utilizando -->
+    <title>Scraper Web</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-    <h1>Mi Scraper Web</h1>
-    
-    <!-- Botón para ejecutar el scraper -->
-    <button id="run-scraper" onclick="ejecutarScraper()">Ejecutar Scraper</button>
-
-    <!-- Botón para detener el scraper (oculto inicialmente) -->
-    <button id="stop-scraper" style="display: none;" onclick="detenerScraper()">Detener Scraper</button>
-
-    <!-- Botón para exportar datos (oculto inicialmente) -->
-    <button id="export-data" style="display: none;" onclick="exportarDatos()">Exportar Datos</button>
-
-    <!-- Script JavaScript para manejar la interacción de los botones -->
-    <script>
-        function ejecutarScraper() {
-            // Aquí puedes agregar el código para ejecutar el scraper
-            alert("Ejecutando el scraper...");
-            // Mostrar el botón "Detener" y ocultar el botón "Ejecutar"
-            document.getElementById("run-scraper").style.display = "none";
-            document.getElementById("stop-scraper").style.display = "inline";
-        }
-
-        function detenerScraper() {
-            // Aquí puedes agregar el código para detener el scraper
-            alert("Deteniendo el scraper...");
-            // Mostrar el botón "Ejecutar" y ocultar el botón "Detener" y "Exportar"
-            document.getElementById("run-scraper").style.display = "inline";
-            document.getElementById("stop-scraper").style.display = "none";
-            document.getElementById("export-data").style.display = "none";
-        }
-
-        function exportarDatos() {
-            // Aquí puedes agregar el código para exportar los datos
-            alert("Exportando datos...");
-        }
-    </script>
+    <div class="container mt-5">
+        <h1>Scraper Web</h1>
+        <form method="POST" action="/scrape">
+            <button type="submit" class="btn btn-primary">Ejecutar Scraper</button>
+        </form>
+    </div>
 </body>
 </html>
