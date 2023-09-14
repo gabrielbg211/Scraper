@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Resultados del Scraper</title>
+    <title>Scraper Web</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
     <div class="container mt-5">
-        <h1>Resultados del Scraper</h1>
-        <ul>
-            {% for result in results %}
-            <li>{{ result }}</li>
-            {% endfor %}
-        </ul>
-        <a href="{{ url_for('index') }}" class="btn btn-primary">Volver</a>
+        <h1>Scraper Web</h1>
+        {% if drivers_installed %}
+        <form method="POST" action="/scrape">
+            <button type="submit" class="btn btn-primary">Ejecutar Scraper</button>
+        </form>
+        {% else %}
+        <p>Los drivers no están instalados. Haz clic en el botón para importarlos.</p>
+        <form method="POST" action="/scrape">
+            <button type="submit" class="btn btn-warning">Importar Drivers</button>
+        </form>
+        {% endif %}
     </div>
 </body>
 </html>
